@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -14,9 +12,6 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://floriansong.github.io/BagPype/",
-    # project_urls={
-    #     "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
-    # },
     classifiers=[
         "Programming Language :: Python :: 3",
         # "License :: OSI Approved :: MIT License",
@@ -30,8 +25,10 @@ setuptools.setup(
         'PyCifRW',
         'requests'
     ),
-    package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
+    package_dir={"": "src"},
     package_data={"bagpype": ["dependencies/*", "dependencies/mmcif/*"]},
+    include_package_data=True,
+    exclude_package_data={"bagpype": ["AUX.cif"]},
     python_requires=">=3.6",
 )
