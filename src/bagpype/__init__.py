@@ -1,15 +1,10 @@
-import bagpype.molecules
-import bagpype.parameters
-
-import bagpype.covalent
+import requests
 import bagpype.construction
+import bagpype.molecules
 import bagpype.parsing
-
-import bagpype.settings
-
-from bagpype.molecules import Protein
-from bagpype.parsing import PDBParser
-from bagpype.construction import Graph_constructor
+# import bagpype.covalent
+# import bagpype.parameters
+# import bagpype.settings
 
 
 head_string = (

@@ -1,13 +1,11 @@
 import os
 import sys
 import subprocess
-from collections import defaultdict
 import string
 import numpy as np
-import networkx as nx
+from collections import defaultdict
 
 import bagpype.molecules
-
 import bagpype.makemultimer
 
 #####################################

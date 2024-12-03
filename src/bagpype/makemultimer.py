@@ -14,12 +14,12 @@ in place and in effect in derived works.
 """
 
 """
-Disclaimer: This program has been adapted for the purposes of "bagpype" as a result of work 
+Disclaimer: This program has been adapted for the purposes of "bagpype" as a result of work
 done at the Yaliraki Group (Imperial College London) by Florian Song.
 """
 
 
-import sys, urllib.request, urllib.parse, urllib.error, gzip, io, re, os.path, pprint, string
+import sys, urllib.request, urllib.parse, urllib.error, gzip, io, re, os.path, string
 
 # this phrase precedes a matrix
 group_start_marker = "APPLY THE FOLLOWING TO CHAINS:"
@@ -113,7 +113,7 @@ def load_remote_pdb(pdbcode):
     url = urltemplate.format(pdbcode)
     request = urllib.request.urlopen(url)
     binary = request.read()
-    pseudo_file = io.StringIO(binary)
+    pseudo_file = io.BytesIO(binary)
     try:
         extracted = gzip.GzipFile("", "r", 0, pseudo_file).read()
     except IOError:
@@ -356,7 +356,6 @@ class BioMolecule(object):
                     new_chain, residue_offset = next(chain_store[old_chain])
 
                     lst = []
-                    atom_offset = atom_numbers[new_chain]
                     atom_counter = 0
 
                     for atom, res_no in chain:

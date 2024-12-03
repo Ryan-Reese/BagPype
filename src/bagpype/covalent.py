@@ -7,8 +7,8 @@ ftp://ftp.ebi.ac.uk/pub/databases/msd/pdbechem/files/mmcif.tar.gz
 (After the download, unpack the tar and deposit in the same dir as this script.)
 There's a script in dependencies, that does this automatically!
 
-References for bond energies: 
-Huheey - Inorganic Chemistry 
+References for bond energies:
+Huheey - Inorganic Chemistry
 Yu-Ran Luo - Comprehensive handbook of chemical bond energies
 """
 

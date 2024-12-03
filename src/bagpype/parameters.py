@@ -12,72 +12,69 @@ Also provided: A way to manually add covalent bond energies for non-standard res
 """
 
 # Some experimental structures that have not been published
-# will include non-standard residues. 
+# will include non-standard residues.
 # Use this mask to specify non-standard residue bond energies.
 non_standard_residues = {
   "ABC": {"C": {"C": 12345678}}
 }
 
-
-
-
 # These are all from Huheey - Inorganic Chemistry - fourth edition
 # Except from James Speight - Lange's Handbook of Chemistry - Seventeenth edition: C-SE, BE-O, FE-S
 single_bond_energies = \
 {
-  ('H', 'H') : 432, 
-  ('H', 'F') : 565, 
+  ('H', 'H') : 432,
+  ('H', 'F') : 565,
   ('H', 'CL'): 428.02,
   ('H', 'BR'): 362.3,
   ('H', 'I') : 294.6,
-  ('H', 'O') : 459, 
-  ('H', 'S') : 363, 
-  ('H', 'SE'): 276, 
-  ('H', 'N') : 386, 
-  ('H', 'P') : 322, 
-  ('H', 'C') : 411, 
+  ('H', 'O') : 459,
+  ('H', 'S') : 363,
+  ('H', 'SE'): 276,
+  ('H', 'N') : 386,
+  ('H', 'P') : 322,
+  ('H', 'C') : 411,
 
-  ('C', 'C') : 346, # 345.6, 
-  ('C', 'F') : 485, 
-  ('C', 'CL'): 327, # 327.2, 
-  ('C', 'BR'): 285, 
-  ('C', 'I') : 213, 
-  ('C', 'O') : 358, # 357.7, 
-  ('C', 'S') : 272, 
+  ('C', 'C') : 346, # 345.6,
+  ('C', 'F') : 485,
+  ('C', 'CL'): 327, # 327.2,
+  ('C', 'BR'): 285,
+  ('C', 'I') : 213,
+  ('C', 'O') : 358, # 357.7,
+  ('C', 'S') : 272,
   ('C', 'N') : 305, # 304.6,
-  ('C', 'P') : 264, 
-  ('C', 'SE'): 582, 
+  ('C', 'P') : 264,
+  ('C', 'SE'): 582,
   ('C', 'FE'): None,
 
-  ('N', 'N') : 167, 
-  ('N', 'F') : 283, 
+  ('N', 'N') : 167,
+  ('N', 'F') : 283,
   ('N', 'CL'): 313,
   ('N', 'P') : 617, # (ref?)
-  ('N', 'O') : 201, 
+  ('N', 'O') : 201,
   ('N', 'S') : 464, # (ref?)
-  ('N', 'FE'): None, 
+  ('N', 'FE'): None,
 
-  ('P', 'F') : 490, 
+  ('P', 'F') : 490,
   ('P', 'CL'): 326,
   ('P', 'BR'): 264,
   ('P', 'I') : 184,
-  ('P', 'O') : 335, 
-  ('P', 'S') : 335, # P=S 
+  ('P', 'O') : 335,
+  ('P', 'S') : 335, # P=S
 
   ('O', 'F') : 190, # 189.5,
-  ('O', 'O') : 142, 
+  ('O', 'O') : 142,
   ('O', 'CL'): 218,
-  ('O', 'ZN'): None, 
+  ('O', 'ZN'): None,
 
-  ('S', 'S') : 268, 
-  ('S', 'F') : 284, 
+  ('S', 'S') : 268,
+  ('S', 'F') : 284,
   ('S', 'O') : 469, # 468.8,
   ('S', 'FE'): 339, # (ref?)
 
 
-  ('BR', 'O'): 201, 
+  ('BR', 'O'): 201,
   ('F', 'F') : 155, # 154.8,
-  ('F', 'BE'): 632, 
+  ('F', 'BE'): 632,
   ('CA', 'O'): 460, # CA=O
   ('CA', 'S'): 310, # CA=S
   ('BE', 'O'): 444, # BE=O
@@ -86,23 +83,23 @@ single_bond_energies = \
 
   ('CL', 'CU'): 360, # (ref?)
   ('CL', 'CL'): 240, # 239.7,
-  ('SE', 'SE'): 272, 
+  ('SE', 'SE'): 272,
 
 }
 
 single_bond_energies_legacy=\
-{'C' : {'C':346, 'H':411, 'N':305, 'O':358, 'S':272, 'F':485, 'P':264, 'SE':582, 'BR':285, 'CL':327, 'I':213}, 
- 'H' : {'C':411, 'N':386, 'O':459, 'S':363, 'F':565, 'H':432, 'P':322, 'SE':276}, 
- 'N' : {'C':305, 'H':386, 'F':283, 'P':617, 'O':201, 'S':464, 'N':167, "FE":None}, 
- 'O' : {'C':358, 'H':459, 'F':190, 'P':335, 'S':469, 'N':201, 'O':142, 'BR':201, 'BE':448, "MG":377, "ZN":None}, # MG=O, but here because that's the distance cutoff 
- 'S' : {'C':272, 'H':363, 'F':284, 'O':469, 'N':464, 'P':335, 'S':167, 'FE':339}, 
- 'P' : {'O':335, 'F':490, 'N':617, 'C':264, 'S':335, 'H':322}, 
+{'C' : {'C':346, 'H':411, 'N':305, 'O':358, 'S':272, 'F':485, 'P':264, 'SE':582, 'BR':285, 'CL':327, 'I':213},
+ 'H' : {'C':411, 'N':386, 'O':459, 'S':363, 'F':565, 'H':432, 'P':322, 'SE':276},
+ 'N' : {'C':305, 'H':386, 'F':283, 'P':617, 'O':201, 'S':464, 'N':167, "FE":None},
+ 'O' : {'C':358, 'H':459, 'F':190, 'P':335, 'S':469, 'N':201, 'O':142, 'BR':201, 'BE':448, "MG":377, "ZN":None}, # MG=O, but here because that's the distance cutoff
+ 'S' : {'C':272, 'H':363, 'F':284, 'O':469, 'N':464, 'P':335, 'S':167, 'FE':339},
+ 'P' : {'O':335, 'F':490, 'N':617, 'C':264, 'S':335, 'H':322},
  'F' : {'C':485, 'H':565, 'N':283, 'O':190, 'S':284, 'P':490, 'F':155, 'BE':632},
  'SE' : {'C':582, 'SE':276},
  'BR' : {'C':285, 'O':201},
  'CL': {'C':327, 'CU':360, 'CL':240},
  'OQ2' : {'CA':464},
- 'CA' : {'OQ2':464}, 
+ 'CA' : {'OQ2':464},
  'BE' : {'F':632, 'O':448},
  'FE' : {'S':339, "N":None},
  'I' : {'C':213},
@@ -127,9 +124,6 @@ triple_bond_energies = {
 ("C", "N"): 887,
 ("C", "O"): 1071,
 }
-
-
-
 
 charges = {#"ACE":{"CA":0,"C":0.38,"O":-0.38,},
            "NH2":{"N":-0.83,"H1":0.415,"H2":0.415,},
@@ -272,8 +266,6 @@ charges = {#"ACE":{"CA":0,"C":0.38,"O":-0.38,},
            "GNP":{"O2G":-0.643, "O1G":-0.643, "O3G":-0.643, "PG":-0.003, "N3B":-0.234, "HNB3":0.136, "PB":0.205, "O2B":-0.519, "O1B":-0.519, "O3A":-0.266, "O2A":-0.510, "O1A":-0.510, "PA":0.268, "O5'":-0.319, "C5'":0.084, "C4'":0.112, "C3'":0.113, "O3'":-0.387, "HO3'":0.211, "C2'":0.126, "O2'":-0.386, "HO2'":0.211, "C1'":0.159, "O4'":-0.348, "N9":-0.244, "C8":0.091, "N7":-0.232, "C5":0.168, "C4":0.162, "N3":-0.201, "C6":0.272, "O6":-0.270, "N1":-0.252, "HN1":0.159, "C2":0.184, "N2":-0.331, "HN21":0.145, "HN22":0.145,},
            }
 
-
-
 ##### Pi sigma charges for DNA
 DG_sigma_pi = {}
 DA_sigma_pi = {}
@@ -296,23 +288,6 @@ DG_sigma_pi['H1'] = [0.1926, 0]
 DG_sigma_pi['C6'] = [1.1920, -0.4291]
 DG_sigma_pi['O6'] = [0.9351, -0.6696]
 
-
-DA_sigma_pi['N9'] = [1.7057, -0.8623]
-DA_sigma_pi['C8'] = [1.1687, -0.4342]
-DA_sigma_pi['H8'] = [0.0675, 0]
-DA_sigma_pi['N7'] = [0.7074, -0.6358]
-DA_sigma_pi['C5'] = [1.1684, -0.5253]
-DA_sigma_pi['C4'] = [1.2400, -0.4778]
-DA_sigma_pi['N3'] = [0.7185, -0.6049]
-DA_sigma_pi['C2'] = [1.2027, -0.4647]
-DA_sigma_pi['H2'] = [0.0698, 0]
-DA_sigma_pi['N1'] = [0.7220, -0.6106]
-DA_sigma_pi['C6'] = [1.2726, -0.4446]
-DA_sigma_pi['N6'] = [1.4443, -0.9399]
-DA_sigma_pi['H62'] = [0.2076, 0]
-DA_sigma_pi['H61'] = [0.2076, 0]
-
-
 DT_sigma_pi['N1'] = [1.6939, -0.8725]
 DT_sigma_pi['C6'] = [1.0444, -0.4718]
 DT_sigma_pi['C5'] = [1.0090, -0.5817]
@@ -328,7 +303,6 @@ DT_sigma_pi['H71'] = [0.0409, 0]
 DT_sigma_pi['H72'] = [0.0409, 0]
 DT_sigma_pi['H73'] = [0.0409, 0]
 
-
 DC_sigma_pi['N1'] = [1.6964, -0.8398]
 DC_sigma_pi['C2'] = [1.2847, -0.4263]
 DC_sigma_pi['N3'] = [0.7183, -0.6976]
@@ -342,62 +316,61 @@ DC_sigma_pi['H6'] = [0.0593, 0]
 DC_sigma_pi['H42'] = [0.2075, 0]
 DC_sigma_pi['H41'] = [0.2075, 0]
 
-
 distance_cutoffs = {
   # All of the below are taken from FIRST
-# ('C', 'C'): 1.75, 
-# ('C', 'CL'): 1.563, 
-# ('C', 'H'): 1.18, 
-# ('C', 'MG'): 0.00, 
-# ('C', 'N'): 1.58, 
-# ('C', 'O'): 1.60, 
-# ('C', 'P'): 1.99, 
-# ('C', 'S'): 2.05, 
-# ('C', 'ZN'): 0.00, 
+# ('C', 'C'): 1.75,
+# ('C', 'CL'): 1.563,
+# ('C', 'H'): 1.18,
+# ('C', 'MG'): 0.00,
+# ('C', 'N'): 1.58,
+# ('C', 'O'): 1.60,
+# ('C', 'P'): 1.99,
+# ('C', 'S'): 2.05,
+# ('C', 'ZN'): 0.00,
 ('CA', 'O'): 1.822 +0.1, # ('CA', 'O'): 2.70, # Replaced by corresponding data from Huheey
-# ('CA', 'N'): 2.45, 
-# ('CA', 'S'): 2.60, 
+# ('CA', 'N'): 2.45,
+# ('CA', 'S'): 2.60,
 ('CU', 'N'): 0, # ('CU', 'N'): 2.20, Currently set to not bond as CU is usually an ion
 ('CU', 'O'): 0, # ('CU', 'O'): 2.20, Currently set to not bond as CU is usually an ion
-# ('CU', 'S'): 2.20, 
-# ('FE', 'H'): 1.00, 
-# ('FE', 'N'): 2.40, 
+# ('CU', 'S'): 2.20,
+# ('FE', 'H'): 1.00,
+# ('FE', 'N'): 2.40,
 ("FE", "O"): 0, # ('FE', 'O'): 2.40, Set to not bond...
-# ('FE', 'S'): 2.40, 
-# ('GE', 'GE'): 2.95, 
-# ('GE', 'SE'): 2.95, 
+# ('FE', 'S'): 2.40,
+# ('GE', 'GE'): 2.95,
+# ('GE', 'SE'): 2.95,
 # ('H', 'H'): 0.78, # This seems to lead to situations where due to bad structural files, two H were covalently bonded even though they shouldn't be.
 ('H', 'H'): 0.,
-# ('H', 'MG'): 0.00, 
-# ('H', 'N'): 1.08+ .1, 
-# ('H', 'O'): 1.05, 
-# ('H', 'P'): 1.50, 
-# ('H', 'S'): 1.38, 
-# ('H', 'ZN'): 0.00, 
+# ('H', 'MG'): 0.00,
+# ('H', 'N'): 1.08+ .1,
+# ('H', 'O'): 1.05,
+# ('H', 'P'): 1.50,
+# ('H', 'S'): 1.38,
+# ('H', 'ZN'): 0.00,
 ('K', 'O'): 0., # ('K', 'O'): 3.10, # Could not find evidence that this exists as a covalent bond.
-# ('MG', 'MG'): 3.782, 
+# ('MG', 'MG'): 3.782,
 ('MG', 'N'): 0, # ('MG', 'N'): 2.50, Currently set to not bond as MG is usually an ion
 # ("MG", "O"): 1.749 +0.1,  # ('MG', 'O'): 2.50, # Replaced by corresponding data from Huheey (double bond!)
-# ('MG', 'S'): 2.50, 
+# ('MG', 'S'): 2.50,
 ('MN', 'N'): 0, # ('MN', 'N'): 2.50, Currently set to not bond as MN is usually an ion
 ('MN', 'O'): 0, # ('MN', 'O'): 2.50, Currently set to not bond as MN is usually an ion
-# ('MN', 'S'): 2.50, 
-# ('N', 'N'): 1.46, 
-# ('N', 'O'): 1.50, 
-# ('N', 'P'): 1.75, 
-# ('N', 'S'): 1.73, 
+# ('MN', 'S'): 2.50,
+# ('N', 'N'): 1.46,
+# ('N', 'O'): 1.50,
+# ('N', 'P'): 1.75,
+# ('N', 'S'): 1.73,
 ('N', 'ZN'): 0, # ('N', 'ZN'): 2.50, Currently set to not bond as ZN is usually an ion
-# ('NA', 'F'): 1.830, 
+# ('NA', 'F'): 1.830,
 ('NA', 'O'): 0., # ('NA', 'O'): 2.70,  # Could not find evidence that this exists as a covalent bond.
-# ('O', 'O'): 1.55, 
-# ('O', 'P'): 1.80, 
-# ('O', 'S'): 1.60, 
-# ('O', 'ZN'): 2.50, 
+# ('O', 'O'): 1.55,
+# ('O', 'P'): 1.80,
+# ('O', 'S'): 1.60,
+# ('O', 'ZN'): 2.50,
 ('P', 'P'): 0, # ('P', 'P'): 2.30, # Could not find evidence that this exists as a covalent bond.
-# ('P', 'S'): 2.10, 
-# ('S', 'S'): 2.10, 
+# ('P', 'S'): 2.10,
+# ('S', 'S'): 2.10,
 ('S', 'ZN'): 0., # ('S', 'ZN'): 2.50, # Could not find evidence that this exists as a covalent bond.
-# ('SE', 'SE'): 2.95, 
+# ('SE', 'SE'): 2.95,
 
 # We add 0.1 to all values to take into account a small tolerance as the values below are usually at equilibrium.
 ("N", "SE"): 1.76 +0.1, #S Sulfur-Nitrogen Compounds Part 3 Compounds with Sulfur of Oxidation Number IV
@@ -442,9 +415,9 @@ distance_cutoffs = {
 ("CO", "O"): 0, # Set to not bond covalently.
 ("CD", "O"): 0, # Set to not bond covalently.
 ("CD", "N"): 0, # Set to not bond covalently.
-('CL', 'ZN'): 0, # Set to not bond covalently. 
-("F" , "I" ): 0, # Set to not bond covalently. 
-("FE", "N"): 0, # Set to not bond covalently. 
+('CL', 'ZN'): 0, # Set to not bond covalently.
+("F" , "I" ): 0, # Set to not bond covalently.
+("FE", "N"): 0, # Set to not bond covalently.
 ("FE", "C"): 0, # Set to not bond covalently.
 ("CL", "S"): 2.07 +0.1, #Huheey
 ("YB", "O"): 0, # Set to not bond covalently.
@@ -454,11 +427,9 @@ distance_cutoffs = {
 ("PT", "S"): 0, # Set to not bond covalently.
 ("PT", "O"): 0, # Set to not bond covalently.
 ("PT", "N"): 0, # Set to not bond covalently.
-
 }
 
-
-# Covalent radii according to Pyykkö 
+# Covalent radii according to Pyykkö
 # Ref: doi 10.1002/chem.200901472
 covalent_radii = \
 {'H' : 0.32,
