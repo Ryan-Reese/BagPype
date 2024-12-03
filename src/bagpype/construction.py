@@ -1546,9 +1546,7 @@ class Graph_constructor(object):
             if len(T) > 0:
                 idxless = (Ttemp < T).nonzero()
                 T[idxless] = Ttemp[idxless]
-                P[
-                    idxless[1]
-                ] = idx  # [1] is necessary since np.where seems to always consider two dimensions
+                P[idxless] = idx
 
         return E, LLink
 
